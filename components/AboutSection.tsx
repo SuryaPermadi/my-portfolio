@@ -15,8 +15,8 @@ export default function AboutSection() {
       </motion.h2>
 
       <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2, duration: 1 }} className="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
-        Saya memiliki ketertarikan besar terhadap dunia desain dan pengembangan web modern. Dengan pengalaman dalam <span className="text-indigo-400">React</span>, <span className="text-indigo-400">Next.js</span>, dan{" "}
-        <span className="text-pink-400">Tailwind CSS</span>, saya berfokus pada menciptakan antarmuka yang indah, cepat, dan responsif.
+        Saya memiliki ketertarikan besar terhadap dunia desain dan pengembangan web modern, saya berfokus pada menciptakan antarmuka yang indah, cepat, dan responsif. Dan membuat sebuah
+        rancangan untuk sebuah Perusahaan dalam urusan IT Tekonologi dan Analisis Sistem agar dapat digunakan dengan mudah dan memperoleh hasil yang diinginkan.
       </motion.p>
     </section>
   );

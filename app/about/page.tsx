@@ -9,7 +9,7 @@ export default function AboutPage() {
       <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
         {/* ==== Left Side (Text) ==== */}
         <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Tentang Saya 👨‍💻</h1>
+          <h1 className="text-5xl font-bold mb-6 py-2 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Tentang Saya 👨‍💻</h1>
           <p className="text-lg leading-relaxed mb-6">
             Halo! Saya <span className="font-semibold text-indigo-500">Surya Permadi Wicaksana</span>, seorang developer yang menyukai pembuatan antarmuka interaktif dan pengalaman web yang halus dan modern. Fokus saya adalah membangun
             aplikasi web yang cepat, elegan, dan berkesan.
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"].map((skill) => (
+            {["IT Governance", "Front End", "UI UX", "Analisis Sistem"].map((skill) => (
               <span key={skill} className="px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 text-sm">
                 {skill}
               </span>

@@ -22,8 +22,8 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 1 }} className="max-w-2xl text-gray-300 text-lg leading-relaxed mb-10">
-        Saya seorang <span className="text-indigo-400">Frontend Developer</span> yang fokus pada membangun pengalaman web modern, interaktif, dan estetik. Menggabungkan <span className="text-pink-400">desain</span> dan{" "}
-        <span className="text-purple-400">teknologi</span> untuk menciptakan produk digital yang berkesan.
+        Saya seorang <span className="text-indigo-400">Frontend Developer, UI UX Designer, IT Governance, serta Analis Sistem</span> yang fokus pada membangun pengalaman web modern, interaktif, dan estetik. Menggabungkan <span className="text-pink-400">desain</span> dan{" "}
+        <span className="text-purple-400">teknologi</span> untuk menciptakan produk digital yang berkesan. Dan memberikan solusi terhadap masalah IT Governance dan Analis Sistem.
       </motion.p>
 
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }} className="flex gap-6">

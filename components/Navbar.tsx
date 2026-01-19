@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="w-full fixed top-0 z-50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border-b border-white/20 dark:border-gray-700 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
-          Surya.dev
+          Portofolio Surya
         </Link>
 
         <div className="flex items-center gap-4">
@@ -35,10 +35,10 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* Dark mode toggle */}
+          {/* Dark mode toggle
           <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition" title="Toggle theme">
             {theme === "dark" ? "🌙" : "☀️"}
-          </button>
+          </button> */}
 
           {/* Hamburger mobile */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
