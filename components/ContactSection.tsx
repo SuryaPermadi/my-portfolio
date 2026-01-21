@@ -5,12 +5,13 @@ import { useState } from "react";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
+  const [topik, setTopik] = useState("");
   const [message, setMessage] = useState("");
 
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "6281223929469";
-    const encodedMessage = encodeURIComponent(`Halo Surya, nama saya ${name}. ${message}`);
+    const encodedMessage = encodeURIComponent(`Halo Surya, nama saya ${name}. Saya ingin membicarakan tentang ${topik}. \n\nPesan: ${message}`);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
   };
 
@@ -59,9 +60,9 @@ export default function ContactSection() {
                 <label className="text-xs font-black uppercase tracking-widest text-indigo-400 ml-1">Topik</label>
                 <input
                   type="text"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  name="topik"
+                  value={topik}
+                  onChange={(e) => setTopik(e.target.value)}
                   placeholder="Project atau Bincang-bincang aja"
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium"
