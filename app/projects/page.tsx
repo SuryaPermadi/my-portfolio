@@ -125,11 +125,11 @@ export default function ProjectsPage() {
         >
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-white/10">
             <span className="text-sm font-medium bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-              Showcase
+              Project yang pernah dikerjakan
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl font-black mb-6 tracking-tight text-white">
-            Selected <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic">Works</span>
+          <h1 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-white py-2">
+            Project <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic pr-2">Portofolio</span>
           </h1>
           <p className="text-gray-400 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
             Eksplorasi kreativitas dan teknologi dalam setiap baris kode dan desain.
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
         <div>
           <div className="flex items-center gap-4 mb-10">
             <div className="w-8 h-[2px] bg-indigo-500 rounded-full" />
-            <h2 className="text-2xl font-black text-white uppercase tracking-widest">Web Development</h2>
+            <h2 className="text-2xl font-black text-white uppercase tracking-widest">Website</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {websiteProjects.map((project, index) => (
