@@ -88,15 +88,15 @@ export default function ContactSection() {
 
         {/* Other contact links */}
         <div className="mt-16 flex flex-wrap justify-center gap-8">
-          <a href="mailto:surya@example.com" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+          <a href="mailto:suryapermadi122@gmail.com" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
             <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
             Email
           </a>
-          <a href="https://linkedin.com/in/surya" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+          <a href="https://www.linkedin.com/in/suryapermadiwicaksana24" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
             <span className="w-2 h-2 rounded-full bg-pink-500 group-hover:scale-125 transition-transform" />
             LinkedIn
           </a>
-          <a href="https://github.com/surya" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+          <a href="https://github.com/SuryaPermadi" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
             <span className="w-2 h-2 rounded-full bg-purple-500 group-hover:scale-125 transition-transform" />
             GitHub
           </a>
