@@ -57,9 +57,15 @@ export default function ContactSection() {
               </div>
               <div className="space-y-3">
                 <label className="text-xs font-black uppercase tracking-widest text-indigo-400 ml-1">Topik</label>
-                <div className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-gray-400 font-medium">
-                  General Inquiry / Project
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Project atau Bincang-bincang aja"
+                  required
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium"
+                />
               </div>
             </div>
 
