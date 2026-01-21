@@ -26,10 +26,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-8xl font-black leading-[1.1] mb-8 tracking-tight"
+          className="text-5xl sm:text-8xl font-black leading-[1.1] mb-8 tracking-tight py-2"
         >
           Transforming Ideas into <br />
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic">
+          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic pr-4">
             Digital Reality
           </span>
         </motion.h1>
