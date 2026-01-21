@@ -1,68 +1,94 @@
 "use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border-b border-white/20 dark:border-gray-700 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
-          Portofolio Surya
+    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 pointer-events-none">
+      <div className={`max-w-4xl mx-auto glass-dark rounded-2xl border border-white/10 px-6 py-3 flex justify-between items-center pointer-events-auto transition-all duration-500 ${scrolled ? "scale-95 shadow-2xl shadow-indigo-500/10" : "scale-100"}`}>
+        <Link href="/" className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          Surya<span className="text-white/80">.</span>
         </Link>
 
-        <div className="flex items-center gap-4">
-          <ul className="hidden md:flex gap-6 text-gray-700 dark:text-gray-200 font-medium">
-            <li>
-              <Link href="/">Home</Link>
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`text-sm font-medium transition-colors relative group py-1 ${pathname === link.href ? "text-white" : "text-gray-400 hover:text-white"}`}
+              >
+                {link.name}
+                {pathname === link.href && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-indigo-500 rounded-full"
+                  />
+                )}
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500/50 rounded-full group-hover:w-full transition-all duration-300" />
+              </Link>
             </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
+          ))}
+        </ul>
 
-          {/* Dark mode toggle
-          <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition" title="Toggle theme">
-            {theme === "dark" ? "🌙" : "☀️"}
-          </button> */}
-
-          {/* Hamburger mobile */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
-            ☰
-          </button>
-        </div>
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+        >
+          <div className={`w-5 h-0.5 bg-white transition-all ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-5 h-0.5 bg-white transition-all ${isOpen ? "opacity-0" : ""}`} />
+          <div className={`w-5 h-0.5 bg-white transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
       </div>
 
-      {isOpen && (
-        <ul className="md:hidden px-6 pb-4 space-y-2 text-gray-700 dark:text-gray-200 font-medium bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
-      )}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-24 left-6 right-6 glass-dark rounded-2xl border border-white/10 p-6 md:hidden pointer-events-auto shadow-2xl"
+          >
+            <ul className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-2 text-lg font-medium transition-colors ${pathname === link.href ? "text-indigo-400" : "text-gray-300 active:text-white"}`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
