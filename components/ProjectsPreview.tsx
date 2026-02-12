@@ -8,19 +8,19 @@ const featuredProjects = [
   {
     title: "Redesign LSP Mercu Buana",
     description: "Website Lembaga Sertifikasi Profesi Universitas Mercu Buana",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDUcXPUssjfSaq2B7R65UyVfuU_cCc6Kihg&s",
+    image: "/images/lsp.png",
     link: "https://lsp-mercu-buana.vercel.app/",
   },
   {
     title: "Photobox",
     description: "Landing page modern dengan animasi halus.",
-    image: "https://i.pinimg.com/736x/06/c5/60/06c560732e2cc0db104170b65c4c71d1.jpg",
+    image: "/images/photobox.png",
     link: "https://photobooth-livid-two.vercel.app/",
   },
   {
     title: "Redesign OK OCE Indonesia",
     description: "Website OK OCE yang lebih modern dan interaktif",
-    image: "https://okoce.net/wp-content/uploads/2021/03/logo-okoce-01-150x150.png",
+    image: "/images/okoce.png",
     link: "https://okoce.vercel.app/",
   },
 ];

@@ -9,29 +9,64 @@ const projects = [
   {
     title: "Redesign LSP Mercu Buana",
     description: "Website Lembaga Sertifikasi Profesi Universitas Mercu Buana",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDUcXPUssjfSaq2B7R65UyVfuU_cCc6Kihg&s",
+    image: "/images/lsp.png",
     link: "https://lsp-mercu-buana.vercel.app/",
     category: "website",
   },
   {
     title: "Photobox",
     description: "Landing page modern dengan animasi halus dan responsive grid.",
-    image: "https://i.pinimg.com/736x/06/c5/60/06c560732e2cc0db104170b65c4c71d1.jpg",
+    image: "/images/photobox.png",
     link: "https://photobooth-livid-two.vercel.app/",
     category: "website",
   },
   {
     title: "Redesign OK OCE Indonesia",
     description: "Website OK OCE yang lebih modern dan interaktif",
-    image: "https://okoce.net/wp-content/uploads/2021/03/logo-okoce-01-150x150.png",
+    image: "/images/okoce.png",
     link: "https://okoce.vercel.app/",
+    category: "website",
+  },
+  {
+    title: "OK Digital",
+    description: "Website OK Digital untuk para umkm yang ingin mempromosikan produk mereka secara online",
+    image: "/images/okdigital.png",
+    link: "https://ok-buat.vercel.app/",
     category: "website",
   },
   {
     title: "UangKu - Financial Planner",
     description: "Aplikasi manajemen keuangan pribadi dengan simulasi alokasi budget 50/30/20.",
-    image: "https://img.freepik.com/vektor-gratis/ilustrasi-ikon-vektor-kartun-dompet-dan-uang-ikon-bisnis-keuangan-terisolasi-vektor-datar_138676-12882.jpg?semt=ais_hybrid&w=740&q=80",
+    image: "/images/uangku.png",
     link: "https://catat-uangku-three.vercel.app/",
+    category: "website",
+  },
+  {
+    title: "Stock Toko",
+    description: "Website untuk toko kelontongan untuk memperbaharui dan memantau stock dari setiap produk yang dijual",
+    image: "/images/stocktoko.png",
+    link: "https://inventory-stock-rho.vercel.app/",
+    category: "website",
+  },
+  {
+    title: "Sekolah - Modern",
+    description: "Website sekolah dengan desain modern dan interaktif",
+    image: "/images/sekolah-ku.png",
+    link: "https://sekolah-modern-app.vercel.app/",
+    category: "website",
+  },
+  {
+    title: "Tech - Page",
+    description: "Website untuk perusahaan yang bergerak pada bidang Tech, cocok untuk menampilkan informasi dari produk yang ada",
+    image: "/images/tech.png",
+    link: "https://tech-landing-page-gamma.vercel.app/",
+    category: "website",
+  },
+  {
+    title: "Kopi - Page",
+    description: "Website untuk usaha kopi/cafemu yang keren!",
+    image: "/images/kopi.png",
+    link: "https://kopi-modernku.vercel.app/",
     category: "website",
   },
   {
@@ -41,6 +76,7 @@ const projects = [
     link: "https://example.com",
     category: "uiux",
   },
+
 ];
 
 function ProjectCard({ project, index }: { project: any; index: number }) {

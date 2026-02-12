@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -51,14 +52,14 @@ export default function HeroSection() {
         >
           <Link
             href="/projects"
-            className="group relative px-8 py-4 bg-white text-black font-bold rounded-2xl hover:scale-105 transition-all duration-300 overflow-hidden"
+            className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-pink-600 text-white font-bold rounded-full hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(168,85,247,0.5)] transition-all duration-300 flex items-center gap-2"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity" />
             Lihat Proyek Saya
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-4 glass border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 hover:scale-105 transition-all duration-300"
+            className="px-8 py-4 glass border border-white/10 text-white font-bold rounded-full hover:bg-white/5 hover:scale-105 transition-all duration-300"
           >
             Hubungi Saya
           </Link>
