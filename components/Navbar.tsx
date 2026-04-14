@@ -44,7 +44,7 @@ export default function Navbar() {
                 {pathname === link.href && (
                   <motion.div
                     layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-indigo-500 rounded-full"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-indigo-600 rounded-full"
                   />
                 )}
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500/50 rounded-full group-hover:w-full transition-all duration-300" />
@@ -79,7 +79,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-2 text-lg font-medium transition-colors ${pathname === link.href ? "text-indigo-400" : "text-gray-300 active:text-white"}`}
+                    className={`block py-2 text-lg font-medium transition-colors ${pathname === link.href ? "text-indigo-500" : "text-gray-300 active:text-white"}`}
                   >
                     {link.name}
                   </Link>

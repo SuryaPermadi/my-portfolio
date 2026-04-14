@@ -7,14 +7,14 @@ module.exports = {
         background: "#030014",
         foreground: "#ffffff",
         primary: {
-          DEFAULT: "#6366f1",
-          hover: "#4f46e5",
+          DEFAULT: "#4f46e5", // Indigo 600
+          hover: "#4338ca",   // Indigo 700
         },
         secondary: {
-          DEFAULT: "#ec4899",
-          hover: "#db2777",
+          DEFAULT: "#be185d", // Pink 700
+          hover: "#9d174d",   // Pink 800
         },
-        accent: "#8b5cf6",
+        accent: "#7c3aed",    // Violet 600
       },
       animation: {
         "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",

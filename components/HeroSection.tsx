@@ -52,7 +52,7 @@ export default function HeroSection() {
         >
           <Link
             href="/projects"
-            className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-pink-600 text-white font-bold rounded-full hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(168,85,247,0.5)] transition-all duration-300 flex items-center gap-2"
+            className="group relative px-8 py-4 bg-gradient-to-r from-indigo-700 to-pink-700 text-white font-bold rounded-full hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(168,85,247,0.5)] transition-all duration-300 flex items-center gap-2"
           >
             Lihat Proyek Saya
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

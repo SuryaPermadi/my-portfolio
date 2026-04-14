@@ -64,7 +64,7 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-[2rem] blur opacity-0 group-hover:opacity-20 transition duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-700 to-pink-700 rounded-[2rem] blur opacity-0 group-hover:opacity-20 transition duration-500" />
               <Link href={project.link} target="_blank" className="relative block h-full glass-dark rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/10">
                 <div className="relative h-64 overflow-hidden">
                   <Image
