@@ -24,10 +24,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-6xl font-black mb-6 text-zinc-950">
             Mari Berkolaborasi
           </h2>
-          <p className="text-gray-400 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-zinc-500 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
             Punya proyek menarik atau sekedar ingin menyapa? <br />
             Silakan hubungi saya melalui form di bawah ini.
           </p>
@@ -37,7 +37,7 @@ export default function ContactSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="glass-dark border border-white/5 p-8 sm:p-12 rounded-[2.5rem] shadow-2xl"
+          className="bg-white border border-zinc-200 p-8 sm:p-12 rounded-[2.5rem] shadow-xl shadow-zinc-100"
         >
           <form
             onSubmit={handleWhatsAppRedirect}
@@ -45,7 +45,7 @@ export default function ContactSection() {
           >
             <div className="grid sm:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-indigo-400 ml-1">Nama Lengkap</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-zinc-400 ml-1">Nama Lengkap</label>
                 <input
                   type="text"
                   name="name"
@@ -53,11 +53,11 @@ export default function ContactSection() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="John Doe"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium"
+                  className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-6 py-4 text-zinc-950 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-950/20 focus:ring-4 focus:ring-zinc-950/5 transition-all font-medium"
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-indigo-400 ml-1">Topik</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-zinc-400 ml-1">Topik</label>
                 <input
                   type="text"
                   name="topik"
@@ -65,13 +65,13 @@ export default function ContactSection() {
                   onChange={(e) => setTopik(e.target.value)}
                   placeholder="Project atau Bincang-bincang aja"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium"
+                  className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-6 py-4 text-zinc-950 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-950/20 focus:ring-4 focus:ring-zinc-950/5 transition-all font-medium"
                 />
               </div>
             </div>
 
             <div className="space-y-3">
-              <label className="text-xs font-black uppercase tracking-widest text-indigo-400 ml-1">Pesan Anda</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-zinc-400 ml-1">Pesan Anda</label>
               <textarea
                 name="message"
                 value={message}
@@ -79,15 +79,14 @@ export default function ContactSection() {
                 rows={5}
                 placeholder="Ceritakan sedikit tentang proyek atau ide Anda..."
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all resize-none font-medium"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-6 py-4 text-zinc-950 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-950/20 focus:ring-4 focus:ring-zinc-950/5 transition-all resize-none font-medium"
               />
             </div>
 
             <button
               type="submit"
-              className="group relative w-full bg-white text-black font-black py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-white/5 flex items-center justify-center gap-2 overflow-hidden"
+              className="group w-full bg-zinc-950 text-white font-bold py-5 rounded-2xl hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-xl shadow-zinc-200 flex items-center justify-center gap-2 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-700 opacity-0 group-hover:opacity-10 transition-opacity" />
               Kirim Pesan ke WhatsApp 💬
             </button>
           </form>
@@ -95,16 +94,16 @@ export default function ContactSection() {
 
         {/* Other contact links */}
         <div className="mt-16 flex flex-wrap justify-center gap-8">
-          <a href="mailto:suryapermadi122@gmail.com" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
-            <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
+          <a href="mailto:suryapermadi122@gmail.com" className="group text-zinc-400 hover:text-zinc-950 transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+            <span className="w-2 h-2 rounded-full bg-blue-500 group-hover:scale-125 transition-transform" />
             Email
           </a>
-          <a href="https://www.linkedin.com/in/suryapermadiwicaksana24" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
-            <span className="w-2 h-2 rounded-full bg-pink-500 group-hover:scale-125 transition-transform" />
+          <a href="https://www.linkedin.com/in/suryapermadiwicaksana24" className="group text-zinc-400 hover:text-zinc-950 transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+            <span className="w-2 h-2 rounded-full bg-zinc-950 group-hover:scale-125 transition-transform" />
             LinkedIn
           </a>
-          <a href="https://github.com/SuryaPermadi" className="group text-gray-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
-            <span className="w-2 h-2 rounded-full bg-purple-500 group-hover:scale-125 transition-transform" />
+          <a href="https://github.com/SuryaPermadi" className="group text-zinc-400 hover:text-zinc-950 transition-colors flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]">
+            <span className="w-2 h-2 rounded-full bg-zinc-600 group-hover:scale-125 transition-transform" />
             GitHub
           </a>
         </div>

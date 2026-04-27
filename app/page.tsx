@@ -10,7 +10,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white">
+    <main className="relative min-h-screen overflow-hidden bg-white text-zinc-950">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />

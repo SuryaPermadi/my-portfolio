@@ -43,9 +43,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center text-center text-gray-300">
-        <h1 className="text-4xl font-bold mb-4">404 — Proyek tidak ditemukan</h1>
-        <Link href="/projects" className="text-indigo-400 hover:underline">
+      <div className="min-h-screen flex flex-col justify-center items-center text-center bg-white text-zinc-950">
+        <h1 className="text-4xl font-black mb-4">404 — Proyek tidak ditemukan</h1>
+        <Link href="/projects" className="text-zinc-500 hover:text-zinc-950 font-bold underline decoration-zinc-200 underline-offset-4">
           ← Kembali ke daftar proyek
         </Link>
       </div>

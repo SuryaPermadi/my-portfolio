@@ -112,30 +112,29 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group relative"
     >
-      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-[2rem] blur opacity-0 group-hover:opacity-20 transition duration-500" />
-      <Link href={project.link} target="_blank" className="relative block h-full glass-dark rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+      <Link href={project.link} target="_blank" className="relative block h-full card-minimal overflow-hidden group-hover:-translate-y-2">
         <div className="relative h-64 overflow-hidden">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-100"
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent opacity-60" />
         </div>
 
         <div className="p-8">
-          <h3 className="text-xl font-black text-white mb-2 group-hover:text-indigo-400 transition-colors">
+          <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-blue-600 transition-colors">
             {project.title}
           </h3>
-          <p className="text-gray-400 text-sm font-medium leading-relaxed line-clamp-2">
+          <p className="text-zinc-500 text-sm font-medium leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
           <div className="mt-6 flex items-center justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400">View Project</span>
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-indigo-500 transition-colors">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">View Project</span>
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100 group-hover:bg-zinc-950 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-600 group-hover:text-white transition-colors">
                 <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
@@ -159,15 +158,15 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-white/10">
-            <span className="text-sm font-medium bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+          <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-zinc-100 border border-zinc-200">
+            <span className="text-xs font-bold tracking-wider uppercase text-zinc-600">
               Project yang pernah dikerjakan
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-white py-2">
-            Project <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic pr-2">Portofolio</span>
+          <h1 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-zinc-950 py-2">
+            Project Portofolio
           </h1>
-          <p className="text-gray-400 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-zinc-500 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
             Eksplorasi kreativitas dan teknologi dalam setiap baris kode dan desain.
           </p>
         </motion.div>
@@ -175,8 +174,8 @@ export default function ProjectsPage() {
         {uiuxProjects.length > 0 && (
           <div className="mb-24">
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-8 h-[2px] bg-pink-500 rounded-full" />
-              <h2 className="text-2xl font-black text-white uppercase tracking-widest">UI/UX Design</h2>
+              <div className="w-8 h-[2px] bg-zinc-950 rounded-full" />
+              <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-widest">UI/UX Design</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {uiuxProjects.map((project, index) => (
@@ -188,8 +187,8 @@ export default function ProjectsPage() {
 
         <div>
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-8 h-[2px] bg-indigo-500 rounded-full" />
-            <h2 className="text-2xl font-black text-white uppercase tracking-widest">Website</h2>
+            <div className="w-8 h-[2px] bg-zinc-950 rounded-full" />
+            <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-widest">Website</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {websiteProjects.map((project, index) => (

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="w-full py-6 bg-gray-900 text-gray-300 text-center mt-12">
-      <p>© 2026 Surya Permadi. All rights reserved.</p>
+    <footer className="w-full py-12 bg-white text-zinc-400 text-center border-t border-zinc-100">
+      <p className="text-sm font-medium">© 2026 Surya Permadi Wicaksana. All rights reserved.</p>
     </footer>
   );
 }

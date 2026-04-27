@@ -9,14 +9,14 @@ export default function BudgetAllocationChart() {
 
     // 50/30/20 Rule
     const data = [
-        { name: "Kebutuhan (50%)", value: income * 0.5, color: "#6366f1" }, // Indigo-500
-        { name: "Keinginan (30%)", value: income * 0.3, color: "#ec4899" }, // Pink-500
-        { name: "Tabungan (20%)", value: income * 0.2, color: "#a855f7" }, // Purple-500
+        { name: "Kebutuhan (50%)", value: income * 0.5, color: "#18181b" }, // Zinc-900
+        { name: "Keinginan (30%)", value: income * 0.3, color: "#2563eb" }, // Blue-600
+        { name: "Tabungan (20%)", value: income * 0.2, color: "#71717a" }, // Zinc-500
     ];
 
     return (
-        <div className="w-full max-w-4xl mx-auto p-6 bg-white/5 border border-white/10 rounded-2xl shadow-xl backdrop-blur-sm mt-12">
-            <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="w-full max-w-4xl mx-auto p-8 bg-white border border-zinc-200 rounded-3xl shadow-xl shadow-zinc-100 mt-12">
+            <h2 className="text-3xl font-black text-center mb-10 text-zinc-950">
                 Simulasi Budget Allocator 50/30/20
             </h2>
 
@@ -24,14 +24,14 @@ export default function BudgetAllocationChart() {
                 {/* Input Section */}
                 <div className="w-full md:w-1/3 space-y-6">
                     <div>
-                        <label className="block text-gray-300 mb-2 font-medium">Input Pemasukan Bulanan</label>
+                        <label className="block text-zinc-500 mb-2 font-bold text-xs uppercase tracking-widest">Input Pemasukan Bulanan</label>
                         <div className="relative">
-                            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">Rp</span>
+                            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 font-bold">Rp</span>
                             <input
                                 type="number"
                                 value={income}
                                 onChange={(e) => setIncome(Number(e.target.value))}
-                                className="w-full bg-gray-900 border border-gray-700 rounded-xl py-3 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl py-3 pl-12 pr-4 text-zinc-950 focus:outline-none focus:ring-2 focus:ring-zinc-950/10 transition"
                             />
                         </div>
                     </div>
@@ -43,13 +43,13 @@ export default function BudgetAllocationChart() {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50 border border-gray-700/50"
+                                className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-100"
                             >
                                 <div className="flex items-center gap-3">
                                     <span className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></span>
-                                    <span className="text-gray-300 text-sm">{item.name}</span>
+                                    <span className="text-zinc-600 text-sm font-medium">{item.name}</span>
                                 </div>
-                                <span className="font-semibold text-white">
+                                <span className="font-bold text-zinc-950">
                                     Rp {item.value.toLocaleString("id-ID")}
                                 </span>
                             </motion.div>
@@ -77,8 +77,8 @@ export default function BudgetAllocationChart() {
                             </Pie>
                             <Tooltip
                                 formatter={(value: any) => `Rp ${Number(value).toLocaleString("id-ID")}`}
-                                contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px", color: "#fff" }}
-                                itemStyle={{ color: "#fff" }}
+                                contentStyle={{ backgroundColor: "#ffffff", borderColor: "#e4e4e7", borderRadius: "12px", color: "#09090b" }}
+                                itemStyle={{ color: "#09090b" }}
                             />
                             <Legend verticalAlign="bottom" height={36} iconType="circle" />
                         </PieChart>

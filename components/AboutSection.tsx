@@ -9,11 +9,11 @@ export default function AboutSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl sm:text-6xl leading-tight font-black mb-10 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl sm:text-6xl font-black mb-8 text-zinc-950">
           Tentang Saya
         </h2>
-        <p className="text-gray-400 leading-relaxed text-lg sm:text-xl max-w-3xl mx-auto font-medium mb-12">
-          Saya memiliki ketertarikan besar terhadap dunia desain dan pengembangan web modern. Berfokus pada menciptakan antarmuka yang <span className="text-white">indah, cepat, dan responsif</span>. Saya membantu perusahaan dalam analisis sistem agar teknologi bekerja lebih optimal.
+        <p className="text-zinc-500 leading-relaxed text-lg sm:text-xl max-w-3xl mx-auto font-medium mb-12">
+          Saya memiliki ketertarikan besar terhadap dunia desain dan pengembangan web modern. Berfokus pada menciptakan antarmuka yang <span className="text-zinc-950">indah, cepat, dan responsif</span>. Saya membantu perusahaan dalam analisis sistem agar teknologi bekerja lebih optimal.
         </p>
 
         <motion.div
@@ -23,7 +23,7 @@ export default function AboutSection() {
         >
           <a
             href="/about"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 hover:border-indigo-500/30 transition-all active:scale-95 group"
+            className="inline-flex items-center gap-2 px-10 py-4 bg-zinc-950 text-white font-bold rounded-2xl hover:bg-zinc-800 transition-all active:scale-95 group shadow-lg shadow-zinc-200"
           >
             Selengkapnya
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
