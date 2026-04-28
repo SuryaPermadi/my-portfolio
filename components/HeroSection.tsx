@@ -6,11 +6,12 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-[#E9F1FA]">
       {/* Background Decorative Elements */}
-      {/* Background Decorative Elements */}
-      <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-zinc-100 blur-[100px] rounded-full -z-10" />
-      <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-blue-50/50 blur-[100px] rounded-full -z-10" />
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#00ABE4]/5 blur-[120px] rounded-full animate-pulse-slow"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#00ABE4]/10 blur-[100px] rounded-full animate-pulse-slow"></div>
+      </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto mt-20">
         <motion.div
@@ -28,13 +29,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl sm:text-8xl font-black leading-[1] mb-8 tracking-tight text-zinc-950"
+          className="text-6xl sm:text-8xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tighter text-zinc-950"
         >
-          Transforming Ideas into <br />
-          <span className="text-blue-600">
-            Digital Reality
-          </span>
+          Design <br />
+          <span className="text-[#00ABE4]">Logic</span>
         </motion.h1>
+        <div className="w-24 h-2 bg-[#00ABE4] mb-10 rounded-full mx-auto" />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -42,27 +42,26 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-zinc-500 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium"
         >
-          Halo, Saya <span className="text-zinc-950 font-bold underline decoration-blue-500/30 decoration-4 underline-offset-4">Surya Permadi Wicaksana</span>. Seorang <span className="text-zinc-950">Frontend Developer</span> & <span className="text-zinc-950">UI Designer</span> yang berdedikasi menciptakan pengalaman web yang estetik dan fungsional.
+          Halo, Saya <span className="text-zinc-950 font-bold underline decoration-[#00ABE4]/30 decoration-4 underline-offset-4">Surya Permadi Wicaksana</span>. Seorang <span className="text-zinc-950">Frontend Developer</span> & <span className="text-zinc-950">UI Designer</span> yang berdedikasi menciptakan pengalaman web yang estetik dan fungsional.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <Link
             href="/projects"
-            className="group px-10 py-4 bg-zinc-950 text-white font-bold rounded-2xl hover:bg-zinc-800 transition-all duration-300 flex items-center gap-2 shadow-xl shadow-zinc-200"
+            className="px-10 py-5 bg-[#00ABE4] text-white font-bold rounded-2xl hover:bg-[#008dbd] transition-all active:scale-95 shadow-2xl shadow-[#00ABE4]/20 text-center"
           >
-            Lihat Proyek Saya
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Lihat Proyek
           </Link>
           <Link
-            href="/contact"
-            className="px-10 py-4 bg-white border border-zinc-200 text-zinc-950 font-bold rounded-2xl hover:bg-zinc-50 transition-all duration-300 shadow-sm"
+            href="/about"
+            className="px-10 py-5 bg-white border-2 border-[#00ABE4]/20 text-[#00ABE4] font-bold rounded-2xl hover:border-[#00ABE4] transition-all active:scale-95 text-center"
           >
-            Hubungi Saya
+            Tentang Saya
           </Link>
         </motion.div>
       </div>

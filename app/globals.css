@@ -4,10 +4,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #E9F1FA;
   --foreground: #09090b;
-  --primary: #18181b;
-  --secondary: #52525b;
+  --primary: #00ABE4;
+  --secondary: #FFFFFF;
 }
 
 body {
@@ -38,13 +38,13 @@ body {
 
 /* Minimalist Utilities */
 .card-minimal {
-  background: #ffffff;
-  border: 1px solid #e4e4e7;
+  background: #FFFFFF; /* Accent color for cards */
+  border: 1px solid rgba(0, 171, 228, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .card-minimal:hover {
-  border-color: #d1d1d6;
-  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+  border-color: #00ABE4;
+  box-shadow: 0 10px 40px -10px rgba(0, 171, 228, 0.15);
 }

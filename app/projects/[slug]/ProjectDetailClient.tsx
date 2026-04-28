@@ -69,7 +69,7 @@ export default function ProjectDetailClient({ project }: { project: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="mb-20"
+              className="mb-20 p-8 bg-white rounded-3xl shadow-sm"
             >
               <BudgetAllocationChart />
             </motion.div>
@@ -83,7 +83,7 @@ export default function ProjectDetailClient({ project }: { project: any }) {
             className="flex flex-wrap justify-center gap-4 mb-24"
           >
             {project.tech.map((tech: string) => (
-              <span key={tech} className="px-5 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-600 text-xs font-bold uppercase tracking-widest">
+              <span key={tech} className="px-5 py-2 rounded-full bg-white border border-[#00ABE4] text-[#00ABE4] text-xs font-bold uppercase tracking-widest">
                 {tech}
               </span>
             ))}

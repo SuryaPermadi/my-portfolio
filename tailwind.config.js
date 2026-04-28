@@ -4,17 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#ffffff",
+        background: "#E9F1FA", // Dominant (60%)
         foreground: "#09090b",
         primary: {
-          DEFAULT: "#18181b", // Zinc 900
-          hover: "#27272a",   // Zinc 800
+          DEFAULT: "#00ABE4", // Secondary (30%)
+          hover: "#008dbd",
         },
         secondary: {
-          DEFAULT: "#52525b", // Zinc 600
-          hover: "#3f3f46",   // Zinc 700
+          DEFAULT: "#FFFFFF", // Accent (10%)
+          hover: "#f4f4f5",
         },
-        accent: "#2563eb",    // Blue 600
+        accent: "#00ABE4",
       },
       animation: {
         "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",

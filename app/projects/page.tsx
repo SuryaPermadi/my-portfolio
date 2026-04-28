@@ -124,17 +124,17 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
         </div>
 
         <div className="p-8">
-          <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-[#00ABE4] transition-colors">
             {project.title}
           </h3>
-          <p className="text-zinc-500 text-sm font-medium leading-relaxed line-clamp-2">
+          <p className="text-zinc-600 text-sm font-medium leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
           <div className="mt-6 flex items-center justify-between">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">View Project</span>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100 group-hover:bg-zinc-950 transition-colors">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-600 group-hover:text-white transition-colors">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-50 group-hover:bg-[#00ABE4] transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-400 group-hover:text-white transition-colors">
                 <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
@@ -150,7 +150,7 @@ export default function ProjectsPage() {
   const websiteProjects = projects.filter(p => p.category === "website");
 
   return (
-    <section className="min-h-screen py-32 px-6 overflow-hidden">
+    <section className="min-h-screen py-32 px-6 overflow-hidden bg-[#E9F1FA]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -158,13 +158,13 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-zinc-100 border border-zinc-200">
-            <span className="text-xs font-bold tracking-wider uppercase text-zinc-600">
+          <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-white border border-[#00ABE4]/10">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#00ABE4]">
               Project yang pernah dikerjakan
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-zinc-950 py-2">
-            Project Portofolio
+            Project <span className="text-[#00ABE4]">Portofolio</span>
           </h1>
           <p className="text-zinc-500 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
             Eksplorasi kreativitas dan teknologi dalam setiap baris kode dan desain.
@@ -174,7 +174,7 @@ export default function ProjectsPage() {
         {uiuxProjects.length > 0 && (
           <div className="mb-24">
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-8 h-[2px] bg-zinc-950 rounded-full" />
+              <div className="w-8 h-[2px] bg-[#00ABE4] rounded-full" />
               <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-widest">UI/UX Design</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -187,7 +187,7 @@ export default function ProjectsPage() {
 
         <div>
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-8 h-[2px] bg-zinc-950 rounded-full" />
+            <div className="w-8 h-[2px] bg-[#00ABE4] rounded-full" />
             <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-widest">Website</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
