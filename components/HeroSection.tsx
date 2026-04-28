@@ -6,11 +6,42 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-[#E9F1FA]">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-[#E9F1FA] bg-grid-pattern">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#00ABE4]/5 blur-[120px] rounded-full animate-pulse-slow"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#00ABE4]/10 blur-[100px] rounded-full animate-pulse-slow"></div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#00ABE4]/5 blur-[120px] rounded-full"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], rotate: [0, -90, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-white/20 blur-[100px] rounded-full"
+        />
+        
+        {/* Tech Floating Elements */}
+        <motion.div 
+          animate={{ y: [0, -20, 0], opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute top-1/4 right-1/4 w-24 h-24 border-2 border-[#00ABE4]/10 rounded-full flex items-center justify-center"
+        >
+          <div className="w-12 h-[1px] bg-[#00ABE4]/20 rotate-45" />
+        </motion.div>
+        
+        <div className="absolute top-1/2 left-10 -translate-y-1/2 hidden lg:block">
+          <div className="flex flex-col items-center gap-10">
+            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#00ABE4] rotate-90">Systems.Init</span>
+            <div className="w-[1px] h-32 bg-gradient-to-b from-[#00ABE4] to-transparent" />
+          </div>
+        </div>
+
+        <div className="absolute bottom-10 right-10 hidden lg:block">
+          <p className="text-[10px] font-mono text-zinc-400 tracking-tighter">
+            LAT: 06° 12' 0" S<br />
+            LONG: 106° 49' 0" E
+          </p>
+        </div>
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto mt-20">
@@ -18,23 +49,28 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="inline-block px-4 py-1.5 mb-8 rounded-full bg-zinc-100 border border-zinc-200"
         >
-          <span className="text-xs font-bold tracking-wider uppercase text-zinc-600">
-            Available for new opportunities 🚀
-          </span>
+          <div className="inline-block px-5 py-2 mb-8 rounded-full bg-white/50 backdrop-blur-md border border-[#00ABE4]/20 shadow-lg shadow-[#00ABE4]/5">
+            <span className="text-[10px] font-black tracking-[0.3em] uppercase text-[#00ABE4] glow-blue">
+              Phase 02 // Interface Operational
+            </span>
+          </div>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl sm:text-8xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tighter text-zinc-950"
         >
-          Design <br />
-          <span className="text-[#00ABE4]">Logic</span>
+          <h1 className="text-7xl sm:text-9xl font-black mb-6 leading-[0.85] tracking-tighter text-zinc-950">
+            DESIGN<br />
+            <span className="text-[#00ABE4] relative">
+              LOGIC
+              <span className="absolute -right-10 -top-4 text-[12px] font-mono text-zinc-400 tracking-tighter hidden sm:block opacity-40">[0x24F]</span>
+            </span>
+          </h1>
+          <div className="w-16 h-1 bg-[#00ABE4] mb-12 rounded-full mx-auto shadow-lg shadow-[#00ABE4]/50 animate-pulse" />
         </motion.h1>
-        <div className="w-24 h-2 bg-[#00ABE4] mb-10 rounded-full mx-auto" />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

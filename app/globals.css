@@ -8,6 +8,7 @@
   --foreground: #09090b;
   --primary: #00ABE4;
   --secondary: #FFFFFF;
+  --accent: #00ABE4;
 }
 
 body {
@@ -36,15 +37,46 @@ body {
   background: #a1a1aa;
 }
 
-/* Minimalist Utilities */
+/* Futuristic Utilities */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(0, 171, 228, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 171, 228, 0.05) 1px, transparent 1px);
+}
+
+.glow-blue {
+  text-shadow: 0 0 10px rgba(0, 171, 228, 0.3);
+}
+
+.box-glow-blue {
+  box-shadow: 0 0 20px rgba(0, 171, 228, 0.2);
+}
+
+.cyber-marker {
+  position: relative;
+}
+
+.cyber-marker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  background: #00ABE4;
+}
+
 .card-minimal {
-  background: #FFFFFF; /* Accent color for cards */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 171, 228, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card-minimal:hover {
   border-color: #00ABE4;
-  box-shadow: 0 10px 40px -10px rgba(0, 171, 228, 0.15);
+  background: #FFFFFF;
+  box-shadow: 0 20px 40px -15px rgba(0, 171, 228, 0.15);
+  transform: translateY(-8px);
 }

@@ -26,10 +26,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-[#E9F1FA]/80 backdrop-blur-xl border-b border-[#00ABE4]/10 py-4" : "bg-transparent py-6"}`}>
-      <div className="max-w-4xl mx-auto px-6 flex justify-between items-center pointer-events-auto">
-        <Link href="/" className="text-xl font-bold text-[#00ABE4] hover:opacity-80 transition-opacity">
-          Surya<span className="text-zinc-400">.</span>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${scrolled ? "bg-[#E9F1FA]/80 backdrop-blur-2xl border-b border-[#00ABE4]/20 py-4 shadow-xl shadow-[#00ABE4]/5" : "bg-transparent py-8"}`}>
+      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center pointer-events-auto relative">
+        {/* Cyber Border Decoration */}
+        <div className="absolute top-0 left-6 w-12 h-[1px] bg-[#00ABE4]/40" />
+        <div className="absolute top-0 right-6 w-12 h-[1px] bg-[#00ABE4]/40" />
+        
+        <Link href="/" className="text-2xl font-black tracking-tighter text-[#00ABE4] hover:opacity-80 transition-opacity flex items-center gap-2">
+          <span className="w-8 h-8 rounded-lg bg-[#00ABE4] text-white flex items-center justify-center text-sm shadow-lg shadow-[#00ABE4]/20">S</span>
+          PORTFOLIO<span className="text-zinc-400">_</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -38,14 +43,14 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`relative text-sm font-bold tracking-widest uppercase transition-colors hover:text-[#00ABE4] ${pathname === link.href ? "text-[#00ABE4]" : "text-zinc-600"}`}
+                  className={`relative text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-[#00ABE4] hover:glow-blue ${pathname === link.href ? "text-[#00ABE4] glow-blue" : "text-zinc-600"}`}
               >
                 {link.name}
                 {pathname === link.href && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#00ABE4] rounded-full"
-                  />
+                    <motion.div
+                      layoutId="nav-underline"
+                      className="absolute -bottom-3 left-0 w-full h-1 bg-[#00ABE4] rounded-full shadow-lg shadow-[#00ABE4]/50"
+                    />
                 )}
               </Link>
             </li>

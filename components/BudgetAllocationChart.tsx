@@ -15,9 +15,16 @@ export default function BudgetAllocationChart() {
     ];
 
     return (
-        <div className="w-full max-w-4xl mx-auto p-8 bg-white border border-[#00ABE4]/10 rounded-3xl shadow-xl shadow-[#00ABE4]/5 mt-12">
-            <h2 className="text-3xl font-black text-center mb-10 text-[#00ABE4]">
-                Simulasi Budget Allocator 50/30/20
+        <div className="w-full max-w-4xl mx-auto p-8 bg-white/90 backdrop-blur-2xl border-2 border-[#00ABE4]/10 rounded-3xl shadow-2xl shadow-[#00ABE4]/5 mt-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-12 h-12 opacity-10">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-[#00ABE4] fill-current">
+                    <rect x="0" y="0" width="20" height="2" />
+                    <rect x="0" y="0" width="2" height="20" />
+                </svg>
+            </div>
+            <h2 className="text-3xl font-black text-center mb-10 text-[#00ABE4] glow-blue uppercase tracking-tighter">
+                <span className="text-[10px] block font-mono tracking-[0.5em] mb-2 opacity-50">ALLOC_SIMULATOR.v1.0</span>
+                Budget Allocator
             </h2>
 
             <div className="flex flex-col md:flex-row items-center justify-around gap-10">

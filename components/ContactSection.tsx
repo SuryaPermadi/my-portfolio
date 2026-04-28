@@ -16,7 +16,8 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6 overflow-hidden bg-[#E9F1FA]">
+    <section id="contact" className="relative py-32 px-6 overflow-hidden bg-[#E9F1FA] bg-grid-pattern">
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#00ABE4]/5 blur-[120px] rounded-full" />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -24,7 +25,8 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-6xl font-black mb-6 text-[#00ABE4]">
+          <h2 className="text-4xl sm:text-6xl font-black mb-6 text-[#00ABE4] glow-blue">
+            <span className="text-[10px] block font-mono tracking-[0.5em] mb-2 opacity-50">COMMS_LINK.ESTABLISH</span>
             Mari Berkolaborasi
           </h2>
           <p className="text-zinc-600 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
@@ -37,8 +39,14 @@ export default function ContactSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-white border border-[#00ABE4]/10 p-8 sm:p-12 rounded-[2.5rem] shadow-xl shadow-[#00ABE4]/5"
+          className="bg-white/90 backdrop-blur-2xl border-2 border-[#00ABE4]/10 p-8 sm:p-12 rounded-[2.5rem] shadow-2xl shadow-[#00ABE4]/5 relative overflow-hidden"
         >
+          {/* Cyber accents for form */}
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-[#00ABE4] fill-current">
+              <path d="M0,0 L100,0 L100,2 L2,2 L2,100 L0,100 Z" />
+            </svg>
+          </div>
           <form
             onSubmit={handleWhatsAppRedirect}
             className="space-y-8"

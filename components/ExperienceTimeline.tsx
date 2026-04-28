@@ -74,7 +74,8 @@ export default function ExperienceTimeline() {
                     className="relative pl-10"
                 >
                     {/* Main Company Dot */}
-                    <div className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#00ABE4] border-4 border-[#E9F1FA] shadow-lg shadow-[#00ABE4]/20 z-10" />
+                    <div className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#00ABE4] border-4 border-[#E9F1FA] shadow-lg shadow-[#00ABE4]/50 z-10 animate-pulse" />
+                    <div className="absolute -left-[20px] top-[14px] w-10 h-[1px] bg-[#00ABE4]/20 -z-10" />
 
                     <div className="mb-8">
                         <h4 className="text-2xl sm:text-3xl font-black text-[#00ABE4] mb-2">{exp.company}</h4>
@@ -103,10 +104,10 @@ export default function ExperienceTimeline() {
                                             {role.period}
                                         </span>
                                     </div>
-                                    <ul className="space-y-4">
+                                    <ul className="space-y-4 relative">
                                         {role.description.map((item, i) => (
-                                            <li key={i} className="text-zinc-600 flex gap-4 items-start">
-                                                <span className="mt-2.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#00ABE4]/50" />
+                                            <li key={i} className="text-zinc-600 flex gap-4 items-start group/item">
+                                                <span className="mt-2.5 flex-shrink-0 w-2 h-[1px] bg-[#00ABE4]/30 group-hover/item:w-4 group-hover/item:bg-[#00ABE4] transition-all" />
                                                 <span className="text-sm sm:text-base leading-relaxed font-medium">{item}</span>
                                             </li>
                                         ))}

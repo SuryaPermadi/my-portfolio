@@ -62,7 +62,6 @@ export default function ProjectDetailClient({ project }: { project: any }) {
             {project.description}
           </motion.p>
 
-          {/* === INTERACTIVE DEMO (Khusus UangKu) === */}
           {project.slug === "uangku" && (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -75,7 +74,6 @@ export default function ProjectDetailClient({ project }: { project: any }) {
             </motion.div>
           )}
 
-          {/* === Tech badges === */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -83,7 +81,7 @@ export default function ProjectDetailClient({ project }: { project: any }) {
             className="flex flex-wrap justify-center gap-4 mb-24"
           >
             {project.tech.map((tech: string) => (
-              <span key={tech} className="px-5 py-2 rounded-full bg-white border border-[#00ABE4] text-[#00ABE4] text-xs font-bold uppercase tracking-widest">
+              <span key={tech} className="px-5 py-2 rounded-full bg-white border border-[#00ABE4] text-[#00ABE4] text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,171,228,0.2)]">
                 {tech}
               </span>
             ))}

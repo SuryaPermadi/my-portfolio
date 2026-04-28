@@ -27,7 +27,13 @@ const featuredProjects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-32 bg-[#E9F1FA]">
+    <section id="projects" className="relative py-32 px-6 bg-[#E9F1FA] bg-grid-pattern">
+      <div className="absolute top-0 right-0 p-10 opacity-5 hidden lg:block">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="150" stroke="#00ABE4" strokeWidth="1" strokeDasharray="10 10" />
+          <rect x="50" y="50" width="300" height="300" stroke="#00ABE4" strokeWidth="0.5" />
+        </svg>
+      </div>
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-center md:text-left">
           <motion.div
@@ -35,7 +41,8 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl sm:text-6xl font-black mb-4 text-[#00ABE4]">
+            <h2 className="text-4xl sm:text-6xl font-black mb-4 text-[#00ABE4] glow-blue">
+              <span className="text-[10px] block font-mono tracking-[0.5em] mb-2 opacity-50">PROJ_EXPLORER.v24</span>
               Proyek Pilihan
             </h2>
             <p className="text-zinc-600 text-lg max-w-md font-medium">
@@ -57,14 +64,18 @@ export default function ProjectsSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {featuredProjects.map((project, index) => (
-              <motion.div
+               <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <Link href={project.link} target="_blank" className="relative block h-full bg-white rounded-3xl border border-[#00ABE4]/10 overflow-hidden group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-[#00ABE4]/10 transition-all duration-300">
+              <Link href={project.link} target="_blank" className="relative block h-full bg-white/80 backdrop-blur-xl rounded-3xl border border-[#00ABE4]/20 overflow-hidden group-hover:-translate-y-4 transition-all duration-500 shadow-2xl shadow-[#00ABE4]/5">
+                {/* Tech Corner Marker */}
+                <div className="absolute top-0 left-0 w-8 h-8 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                   <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#00ABE4]" />
+                </div>
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.image}
