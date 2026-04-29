@@ -1,8 +1,5 @@
-"use client";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -57,7 +54,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -70,7 +67,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <div className="w-16 h-1 bg-[#00ABE4] mb-12 rounded-full mx-auto shadow-lg shadow-[#00ABE4]/50 animate-pulse" />
-        </motion.h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

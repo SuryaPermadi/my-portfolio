@@ -6,7 +6,7 @@ import ExperienceTimeline from "@/components/ExperienceTimeline";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#E9F1FA]">
+    <div className="min-h-screen bg-[#E9F1FA] text-zinc-950">
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center mb-32">
           {/* ==== Left Side (Text) ==== */}
@@ -21,7 +21,7 @@ export default function AboutPage() {
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
+            <h1 className="text-5xl sm:text-7xl font-black mb-8 leading-tight tracking-tight">
               Developing with <br />
               <span className="text-[#00ABE4] italic">
                 Heart & Logic
