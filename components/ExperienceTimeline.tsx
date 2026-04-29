@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const experiences = [
     {
         company: "OK OCE Indonesia",
-        period: "Nov 2023 - Present",
+        period: "Nov 2023 - Sekarang",
         roles: [
             {
                 title: "Website Developer",
@@ -64,51 +64,43 @@ const experiences = [
 
 export default function ExperienceTimeline() {
     return (
-        <div className="relative border-l-2 border-[#00ABE4]/10 ml-4 space-y-20 pb-12">
+        <div className="relative border-l border-primary/10 ml-4 space-y-24 pb-12">
             {experiences.map((exp, index) => (
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="relative pl-10"
+                    className="relative pl-12"
                 >
-                    {/* Main Company Dot */}
-                    <div className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#00ABE4] border-4 border-[#E9F1FA] shadow-lg shadow-[#00ABE4]/50 z-10 animate-pulse" />
-                    <div className="absolute -left-[20px] top-[14px] w-10 h-[1px] bg-[#00ABE4]/20 -z-10" />
+                    {/* Dot Indicator */}
+                    <div className="absolute -left-[6px] top-2 w-3 h-3 rounded-full bg-primary ring-8 ring-primary/5 animate-pulse" />
 
-                    <div className="mb-8">
-                        <h4 className="text-2xl sm:text-3xl font-black text-[#00ABE4] mb-2">{exp.company}</h4>
-                        <div className="inline-block px-3 py-1 rounded-md bg-[#00ABE4]/5 border border-[#00ABE4]/10">
-                            <p className="text-[#00ABE4]/70 text-[10px] font-bold uppercase tracking-widest">{exp.period}</p>
+                    <div className="mb-10">
+                        <div className="flex items-center gap-4 mb-4">
+                            <span className="text-xs font-mono text-primary font-black tracking-widest">{exp.period}</span>
+                            <div className="h-[1px] flex-grow bg-gradient-to-r from-primary/20 to-transparent" />
                         </div>
+                        <h4 className="text-3xl sm:text-5xl font-black text-foreground tracking-tighter mb-2 italic uppercase">{exp.company}</h4>
                     </div>
 
-                    <div className="space-y-10 relative">
-                        {exp.roles.length > 1 && (
-                            <div className="absolute left-[-41px] top-6 bottom-6 w-[2px] bg-[#00ABE4]/10" />
-                        )}
-
+                    <div className="grid grid-cols-1 gap-8">
                         {exp.roles.map((role, roleIndex) => (
-                            <div key={roleIndex} className="relative group">
-                                {exp.roles.length > 1 && (
-                                    <div className="absolute -left-[46px] top-3 w-3 h-3 rounded-full bg-white border border-[#00ABE4]/20 group-hover:bg-[#00ABE4] transition-all duration-300" />
-                                )}
-
-                                <div className="bg-white border border-[#00ABE4]/10 p-8 rounded-3xl group-hover:translate-x-2 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-[#00ABE4]/5">
-                                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-6 gap-4">
-                                        <h5 className="text-xl font-bold text-zinc-950 transition-colors">
-                                            {role.title}
-                                        </h5>
-                                        <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#E9F1FA] text-[#00ABE4] border border-[#00ABE4]/10 whitespace-nowrap self-start uppercase tracking-widest">
-                                            {role.period}
-                                        </span>
+                            <div key={roleIndex} className="group relative">
+                                <div className="card-premium">
+                                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-8 gap-4">
+                                        <div>
+                                            <h5 className="text-2xl font-black text-foreground tracking-tight group-hover:text-primary transition-colors">
+                                                {role.title}
+                                            </h5>
+                                            <p className="text-xs font-mono text-zinc-400 mt-1 uppercase">{role.period}</p>
+                                        </div>
                                     </div>
-                                    <ul className="space-y-4 relative">
+                                    <ul className="space-y-6">
                                         {role.description.map((item, i) => (
-                                            <li key={i} className="text-zinc-600 flex gap-4 items-start group/item">
-                                                <span className="mt-2.5 flex-shrink-0 w-2 h-[1px] bg-[#00ABE4]/30 group-hover/item:w-4 group-hover/item:bg-[#00ABE4] transition-all" />
-                                                <span className="text-sm sm:text-base leading-relaxed font-medium">{item}</span>
+                                            <li key={i} className="flex gap-6 items-start">
+                                                <span className="mt-3 flex-shrink-0 w-2 h-2 rounded-full border border-primary/20 bg-primary/5 group-hover:bg-primary transition-colors duration-500" />
+                                                <span className="text-base sm:text-lg text-zinc-500 leading-relaxed font-normal">{item}</span>
                                             </li>
                                         ))}
                                     </ul>

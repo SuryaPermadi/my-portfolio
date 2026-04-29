@@ -4,22 +4,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#E9F1FA", // Dominant (60%)
-        foreground: "#09090b",
+        background: "#FFFFFF", // Clean White
+        foreground: "#111111", // Deep Charcoal
         primary: {
-          DEFAULT: "#00ABE4", // Secondary (30%)
-          hover: "#008dbd",
+          DEFAULT: "#6D28D9", // Deep Violet
+          hover: "#5B21B6",
+          muted: "#F5F3FF",
         },
         secondary: {
-          DEFAULT: "#FFFFFF", // Accent (10%)
-          hover: "#f4f4f5",
+          DEFAULT: "#F4F4F5", // Light Gray
+          hover: "#E4E4E7",
         },
-        accent: "#00ABE4",
+        accent: "#7C3AED", // Vibrant Violet
+      },
+      borderRadius: {
+        '3xl': '1.5rem',
+        '4xl': '2rem',
+        '5xl': '3rem',
       },
       animation: {
         "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 6s ease-in-out infinite",
-        "mesh": "mesh 10s ease-in-out infinite",
+        "reveal": "reveal 0.8s cubic-bezier(0, 0, 0.2, 1) forwards",
       },
       keyframes: {
         float: {
