@@ -43,10 +43,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center text-center bg-white text-zinc-950">
-        <h1 className="text-4xl font-black mb-4">404 — Proyek tidak ditemukan</h1>
-        <Link href="/projects" className="text-zinc-500 hover:text-zinc-950 font-bold underline decoration-zinc-200 underline-offset-4">
-          ← Kembali ke daftar proyek
+      <div className="min-h-screen flex flex-col justify-center items-center text-center bg-background text-white px-6">
+        <p className="text-primary font-mono text-[10px] uppercase tracking-widest mb-6">// ERROR_404: UNIT_NOT_FOUND</p>
+        <h1 className="text-4xl font-bold mb-10 tracking-tighter uppercase italic">Identity mismatch — Data not found</h1>
+        <Link href="/projects" className="text-primary hover:underline font-mono text-xs uppercase tracking-widest">
+          &larr; Return to Central Repository
         </Link>
       </div>
     );

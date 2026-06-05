@@ -1,27 +1,38 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-20 bg-white border-t border-[#F4F4F5] text-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
-        <div className="flex justify-center gap-10 mb-12">
+    <footer className="bg-void-black/60 backdrop-blur-2xl py-16 border-t border-white/10 mt-32 relative z-20 overflow-hidden">
+      {/* Decorative Orbs in Background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary-container/2 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <Link href="/" className="font-display text-lg tracking-[-0.05em] text-white uppercase font-bold">
+            DESIGN<span className="text-primary-container font-light">LOGIC</span>
+          </Link>
+          <p className="font-mono text-[9px] tracking-widest text-on-surface-variant/40 uppercase">
+            © {new Date().getFullYear()} SURYA PERMADI. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+
+        <div className="flex gap-10">
           {[
-            { icon: <Mail className="w-5 h-5" />, href: "mailto:suryapermadi122@gmail.com" },
-            { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/suryapermadiwicaksana24" },
-            { icon: <Github className="w-5 h-5" />, href: "https://github.com/SuryaPermadi" }
-          ].map((item, i) => (
-            <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-primary transition-all duration-300 hover:scale-125">
-              {item.icon}
+            { name: "Email", href: "mailto:suryapermadi122@gmail.com" },
+            { name: "LinkedIn", href: "https://www.linkedin.com/in/suryapermadiwicaksana24" },
+            { name: "Github", href: "https://github.com/SuryaPermadi" },
+          ].map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-on-surface-variant/40 hover:text-primary-container transition-all duration-300 font-mono text-[9px] tracking-widest uppercase"
+            >
+              {link.name}
             </a>
           ))}
         </div>
-        <p className="text-zinc-400 text-[10px] font-black uppercase tracking-[0.5em] mb-4">
-          Dibangun dengan Presisi & Estetika
-        </p>
-        <p className="text-zinc-600 font-bold tracking-tight text-sm">
-          © {new Date().getFullYear()} <span className="text-[#111111]">Surya Permadi</span>. Hak cipta dilindungi undang-undang.
-        </p>
       </div>
     </footer>
   );

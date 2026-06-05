@@ -5,91 +5,75 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center justify-center px-6 pt-24 overflow-hidden bg-white">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0 bg-grid-pattern opacity-60" />
-      
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-10">
-        <motion.div 
-          animate={{ x: [-100, 100, -100], y: [-50, 50, -50] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full opacity-60"
-        />
-        <motion.div 
-          animate={{ x: [100, -100, 100], y: [50, -50, 50] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full opacity-60"
-        />
-      </div>
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 relative overflow-hidden">
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-container/10 glow-orb rounded-full animate-pulse-slow pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/10 glow-orb rounded-full animate-pulse-slow pointer-events-none" style={{ animationDelay: '-6s' }}></div>
+      <div className="absolute top-1/2 left-10 shard w-40 h-80 opacity-30 animate-float pointer-events-none"></div>
+      <div className="absolute top-1/3 right-20 shard w-32 h-60 opacity-20 animate-float pointer-events-none" style={{ animationDelay: "-5s" }}></div>
 
-      <div className="relative z-20 text-center max-w-5xl mx-auto">
+      <div className="relative z-20 text-center max-w-6xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full border border-primary-container/30 text-primary-container font-mono text-[10px] tracking-[0.2em] mb-10 bg-primary-container/5 backdrop-blur-md"
         >
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-black tracking-[0.2em] uppercase text-primary">
-            <span className="relative flex h-2 w-2 mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Tersedia untuk Proyek Baru
-          </span>
+          <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f0ff]"></span>
+          PHASE 02 // INTERFACE OPERATIONAL
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
         >
-          <h1 className="text-7xl sm:text-[10rem] font-black mb-8 leading-[0.8] tracking-tight text-foreground select-none">
-            MEMBANGUN<br />
-            <span className="text-primary italic uppercase glow-violet">
-              MIMPI
-            </span>
+          <h1 className="font-display text-7xl sm:text-[84px] md:text-[10rem] font-extrabold mb-6 tracking-tighter leading-[0.85] text-white drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+            DESIGN <br />
+            <span className="text-primary-container font-light italic">LOGIC</span>
+            <span className="text-white/20 font-mono text-3xl sm:text-4xl align-top ml-4">[0x24F]</span>
           </h1>
         </motion.div>
+
+        <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary-container to-transparent mx-auto mb-12 opacity-60"></div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-2xl mx-auto space-y-8"
+          className="max-w-2xl mx-auto"
         >
-          <p className="text-zinc-500 text-xl sm:text-2xl leading-relaxed font-normal tracking-tight">
-            Mengembangkan antarmuka digital <span className="text-foreground font-semibold italic">berperforma tinggi</span> dengan fokus pada <span className="text-primary font-bold">minimalisme estetis</span> dan keunggulan teknis.
+          <p className="font-sans text-lg md:text-xl text-on-surface-variant/80 mb-14 leading-relaxed font-light">
+            Halo, Saya <span className="text-white font-semibold">Surya Permadi Wicaksana</span>. Seorang Frontend Developer & UI Designer yang berdedikasi menciptakan pengalaman web yang <span className="italic text-primary-container">estetik</span> dan fungsional.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <Link
               href="/projects"
-              className="group relative px-12 py-5 bg-[#111111] text-white font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-2xl hover:shadow-primary/20 overflow-hidden"
+              className="group relative px-12 py-5 overflow-hidden rounded-xl bg-primary-container text-on-primary font-mono text-[10px] uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10">Lihat Karya</span>
+              <span className="relative z-10">Lihat Proyek</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
             </Link>
             <Link
               href="/about"
-              className="px-12 py-5 bg-[#F4F4F5] text-[#111111] font-bold rounded-2xl hover:bg-[#E4E4E7] transition-all active:scale-95 border border-transparent hover:border-[#111111]/5 shadow-sm"
+              className="px-12 py-5 rounded-xl border border-white/20 glass-card font-mono text-[10px] uppercase tracking-widest hover:border-primary-container/50 transition-all"
             >
-              Cerita Saya
+              Tentang Saya
             </Link>
           </div>
         </motion.div>
+      </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 hidden lg:block"
-        >
-          <div className="flex flex-col items-center gap-4">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 rotate-90 mb-4">Gulir</span>
-            <div className="w-[1px] h-24 bg-gradient-to-b from-zinc-200 to-transparent" />
-          </div>
-        </motion.div>
+      {/* Hero Stats (Decorative) */}
+      <div className="absolute right-12 bottom-12 text-right hidden lg:block opacity-30 font-mono text-[10px] tracking-widest leading-loose">
+        <p>LAT: 06° 12' 0" S</p>
+        <p>LONG: 106° 49' 0" E</p>
+        <p className="text-primary-container">SYS_STATUS: OPTIMAL</p>
+      </div>
+      <div className="absolute left-12 top-1/2 -rotate-90 origin-left hidden lg:block opacity-30 font-mono text-[10px] tracking-[0.3em] uppercase">
+        SYSTEMS.INIT // DATA_LOADED // v2.0.4
       </div>
     </section>
   );

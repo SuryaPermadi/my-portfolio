@@ -2,41 +2,60 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-40 px-6 bg-white overflow-hidden">
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center relative z-10"
-      >
-        <p className="text-primary font-black uppercase tracking-[0.4em] text-[10px] mb-6">Keahlian & Visi</p>
-        <h2 className="text-5xl sm:text-7xl font-black mb-10 text-foreground tracking-tight uppercase italic">
-          MINIMALIS <br /><span className="text-primary">DALAM DESAIN</span>
-        </h2>
-        <p className="text-zinc-500 leading-relaxed text-xl sm:text-2xl max-w-2xl mx-auto font-light italic mb-16">
-          "Arsitektur dimulai saat rekayasa berakhir." Saya menerapkan filosofi ini pada setiap baris kode—menciptakan sistem digital yang <span className="text-foreground font-bold not-italic">tangguh</span> sekaligus <span className="text-primary font-bold not-italic">indah</span>.
-        </p>
-
+    <section id="about" className="py-32 px-gutter max-w-7xl mx-auto relative overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+        {/* Left Side: Photo with Effect */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="md:col-span-5"
         >
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-4 px-12 py-5 bg-[#111111] text-white font-black rounded-2xl transition-all shadow-xl hover:shadow-primary/20 group uppercase tracking-widest text-xs"
-          >
-            Baca cerita lengkapnya
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
-              <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div className="aspect-[4/5] glass-card rounded-2xl overflow-hidden relative group p-2 rim-light-cyan">
+            <div className="absolute inset-0 bg-primary-container/15 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
+            <div className="relative w-full h-full overflow-hidden rounded-xl">
+              <Image
+                src="/images/foto-profil.jpeg"
+                alt="Surya Permadi"
+                fill
+                className="object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-void-black/90 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+            <div className="absolute inset-0 border border-primary-container/30 rounded-xl pointer-events-none"></div>
+          </div>
+        </motion.div>
+
+        {/* Right Side: Text Digger */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="md:col-span-7"
+        >
+          <span className="font-mono text-[10px] text-primary-container tracking-[0.3em] mb-6 block uppercase">
+            REF_ABOUT_02 // SYSTEM_ANALYSIS
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl text-white mb-10 leading-[1.1] tracking-tighter">
+            INITIALIZING.USR_INTEL <br />
+            <span className="text-white/20 font-light italic">Tentang Saya</span>
+          </h2>
+          <p className="font-sans text-lg text-on-surface-variant/80 mb-12 leading-relaxed font-light">
+            Saya memiliki ketertarikan besar terhadap dunia desain dan pengembangan web modern. Berfokus pada menciptakan antarmuka yang indah, cepat, dan responsif. Saya membantu perusahaan dalam analisis sistem agar teknologi bekerja lebih optimal dengan pendekatan desain yang berpusat pada pengguna.
+          </p>
+          <Link href="/about" className="inline-flex items-center gap-5 text-primary-container font-mono text-[10px] uppercase tracking-widest group">
+            Selengkapnya 
+            <span className="w-12 h-px bg-primary-container/40 group-hover:w-20 transition-all duration-500"></span>
+            <span className="group-hover:translate-x-2 transition-transform">&rarr;</span>
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

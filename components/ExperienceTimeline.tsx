@@ -64,7 +64,7 @@ const experiences = [
 
 export default function ExperienceTimeline() {
     return (
-        <div className="relative border-l border-primary/10 ml-4 space-y-24 pb-12">
+        <div className="relative border-l border-white/5 ml-4 space-y-24 pb-12">
             {experiences.map((exp, index) => (
                 <motion.div
                     key={index}
@@ -74,33 +74,33 @@ export default function ExperienceTimeline() {
                     className="relative pl-12"
                 >
                     {/* Dot Indicator */}
-                    <div className="absolute -left-[6px] top-2 w-3 h-3 rounded-full bg-primary ring-8 ring-primary/5 animate-pulse" />
+                    <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-primary shadow-[0_0_10px_rgba(0,245,255,0.8)]" />
 
                     <div className="mb-10">
                         <div className="flex items-center gap-4 mb-4">
-                            <span className="text-xs font-mono text-primary font-black tracking-widest">{exp.period}</span>
-                            <div className="h-[1px] flex-grow bg-gradient-to-r from-primary/20 to-transparent" />
+                            <span className="text-[10px] font-mono text-primary/60 uppercase tracking-[0.3em] italic">{exp.period}</span>
+                            <div className="h-[1px] flex-grow bg-white/5" />
                         </div>
-                        <h4 className="text-3xl sm:text-5xl font-black text-foreground tracking-tighter mb-2 italic uppercase">{exp.company}</h4>
+                        <h4 className="text-3xl sm:text-5xl font-bold text-white tracking-tighter mb-2 uppercase italic">{exp.company}</h4>
                     </div>
 
                     <div className="grid grid-cols-1 gap-8">
                         {exp.roles.map((role, roleIndex) => (
                             <div key={roleIndex} className="group relative">
-                                <div className="card-premium">
+                                <div className="border border-white/5 bg-secondary/20 p-8 sm:p-12 transition-all hover:border-primary/30">
                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-8 gap-4">
                                         <div>
-                                            <h5 className="text-2xl font-black text-foreground tracking-tight group-hover:text-primary transition-colors">
+                                            <h5 className="text-2xl font-bold text-white tracking-tight group-hover:text-primary transition-colors uppercase">
                                                 {role.title}
                                             </h5>
-                                            <p className="text-xs font-mono text-zinc-400 mt-1 uppercase">{role.period}</p>
+                                            <p className="text-[10px] font-mono text-gray-600 mt-2 uppercase tracking-widest italic">{role.period}</p>
                                         </div>
                                     </div>
                                     <ul className="space-y-6">
                                         {role.description.map((item, i) => (
                                             <li key={i} className="flex gap-6 items-start">
-                                                <span className="mt-3 flex-shrink-0 w-2 h-2 rounded-full border border-primary/20 bg-primary/5 group-hover:bg-primary transition-colors duration-500" />
-                                                <span className="text-base sm:text-lg text-zinc-500 leading-relaxed font-normal">{item}</span>
+                                                <span className="mt-2.5 flex-shrink-0 w-1.5 h-1.5 bg-primary/20 group-hover:bg-primary transition-all duration-500" />
+                                                <span className="text-sm text-gray-500 leading-relaxed italic font-light">{item}</span>
                                             </li>
                                         ))}
                                     </ul>

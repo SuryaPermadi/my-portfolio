@@ -10,11 +10,11 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white text-foreground selection:bg-primary/10 selection:text-primary">
+    <>
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-    </main>
+    </>
   );
 }
