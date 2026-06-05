@@ -6,7 +6,7 @@ import ExperienceTimeline from "@/components/ExperienceTimeline";
 
 export default function AboutPage() {
   return (
-    <section className="min-h-screen pt-40 pb-32 px-6 relative">
+    <section className="min-h-screen pt-40 pb-32 px-6 relative bg-background">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-32">
