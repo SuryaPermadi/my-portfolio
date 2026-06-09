@@ -6,89 +6,176 @@ import { useState } from "react";
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
-    topic: "",
+    email: "",
     message: "",
   });
+  const [sending, setSending] = useState(false);
 
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, topic, message } = formData;
+    setSending(true);
+    const { name, email, message } = formData;
     const phoneNumber = "6289652391060";
-    const text = `Halo Surya, saya ${name}.%0A%0ATopik: ${topic}%0A%0APesan: ${message}`;
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+    const text = `Halo Surya, saya ${name} (${email}).%0A%0APesan: ${message}`;
+    setTimeout(() => {
+      window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+      setSending(false);
+    }, 600);
   };
 
   return (
-    <section id="contact" className="py-32 px-6">
-      <div className="max-w-4xl mx-auto glass-card rounded-[3rem] p-10 md:p-20 reveal-up relative overflow-hidden rim-light-cyan">
-        {/* Glow Orbs */}
-        <div className="absolute -top-24 -right-24 w-80 h-80 bg-primary-container/10 glow-orb pointer-events-none rounded-full"></div>
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-secondary/10 glow-orb pointer-events-none rounded-full"></div>
+    <section id="contact" className="py-24 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="h-px w-full bg-black/8 mb-24" />
 
-        <div className="text-center mb-20 relative z-10">
-          <span className="font-mono text-[10px] text-primary-container tracking-[0.4em] mb-6 block uppercase">COMMS_LINK.ESTABLISH</span>
-          <h2 className="font-display text-5xl md:text-6xl text-white tracking-tighter mb-6">Mari Berkolaborasi</h2>
-          <p className="text-on-surface-variant/60 font-light max-w-lg mx-auto">
-            Punya proyek menarik atau sekedar ingin menyapa? Silakan hubungi saya melalui form di bawah ini.
-          </p>
-        </div>
-
-        <form onSubmit={handleWhatsAppRedirect} className="space-y-10 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-3">
-              <label className="font-mono text-[9px] tracking-widest text-primary-container/60 uppercase ml-1">NAMA LENGKAP</label>
-              <input
-                required
-                type="text"
-                placeholder="John Doe"
-                className="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-container focus:ring-0 text-white transition-all duration-500 px-0 py-4 text-lg font-light placeholder:text-white/10"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              />
-            </div>
-            <div className="space-y-3">
-              <label className="font-mono text-[9px] tracking-widest text-primary-container/60 uppercase ml-1">TOPIK</label>
-              <input
-                required
-                type="text"
-                placeholder="Project or inquiry"
-                className="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-container focus:ring-0 text-white transition-all duration-500 px-0 py-4 text-lg font-light placeholder:text-white/10"
-                value={formData.topic}
-                onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-              />
-            </div>
-          </div>
-          <div className="space-y-3">
-            <label className="font-mono text-[9px] tracking-widest text-primary-container/60 uppercase ml-1">PESAN ANDA</label>
-            <textarea
-              required
-              rows={3}
-              placeholder="Ceritakan sedikit tentang proyek atau ide Anda..."
-              className="w-full bg-transparent border-0 border-b border-white/20 focus:border-primary-container focus:ring-0 text-white transition-all duration-500 px-0 py-4 text-lg font-light placeholder:text-white/10"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="group w-full bg-primary-container text-on-primary font-bold py-8 rounded-2xl flex items-center justify-center gap-4 hover:scale-[1.01] transition-all duration-500 shadow-[0_20px_40px_rgba(0,240,255,0.3)]"
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+          {/* Left: Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-5"
           >
-            <span className="font-mono text-xs uppercase tracking-widest">Kirim Pesan ke WhatsApp</span>
-            <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">&rarr;</span>
-          </button>
-        </form>
+            <p className="section-label mb-4">Contact</p>
+            <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal tracking-tight leading-tight mb-6">
+              I&apos;m currently available for{" "}
+              <span className="font-serif italic text-accent font-light">
+                freelance work
+              </span>
+            </h2>
+            <p className="text-muted text-lg leading-relaxed mb-10">
+              Punya proyek menarik atau hanya ingin menyapa? Kirimkan saya pesan
+              dan saya akan segera merespons.
+            </p>
 
-        <div className="mt-24 pt-12 border-t border-white/10 flex flex-wrap justify-center gap-12 items-center font-mono text-[10px] tracking-widest uppercase text-on-surface-variant/40">
-          <a href="mailto:suryapermadi122@gmail.com" className="flex items-center gap-3 hover:text-primary-container transition-colors">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span> EMAIL
-          </a>
-          <a href="https://www.linkedin.com/in/suryapermadiwicaksana24" target="_blank" className="flex items-center gap-3 hover:text-primary-container transition-colors">
-            <span className="w-1.5 h-1.5 rounded-full border border-white/30"></span> LINKEDIN
-          </a>
-          <a href="https://github.com/SuryaPermadi" target="_blank" className="flex items-center gap-3 hover:text-primary-container transition-colors">
-            <span className="w-1.5 h-1.5 rounded-full border border-white/30"></span> GITHUB
-          </a>
+            {/* Contact Links */}
+            <div className="space-y-4">
+              {[
+                {
+                  icon: "mail",
+                  label: "Email",
+                  value: "suryapermadi122@gmail.com",
+                  href: "mailto:suryapermadi122@gmail.com",
+                },
+                {
+                  icon: "language",
+                  label: "LinkedIn",
+                  value: "suryapermadiwicaksana24",
+                  href: "https://www.linkedin.com/in/suryapermadiwicaksana24",
+                },
+                {
+                  icon: "code",
+                  label: "GitHub",
+                  value: "SuryaPermadi",
+                  href: "https://github.com/SuryaPermadi",
+                },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <span className="material-symbols-outlined text-accent group-hover:text-white text-base transition-colors">
+                      {item.icon}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted uppercase tracking-wider font-semibold">
+                      {item.label}
+                    </p>
+                    <p className="text-charcoal text-sm font-medium group-hover:text-accent transition-colors">
+                      {item.value}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="md:col-span-7"
+          >
+            <div className="card-warm rounded-3xl p-8 md:p-10">
+              <h3 className="font-display font-bold text-xl text-charcoal mb-8">
+                Kirim Pesan
+              </h3>
+              <form onSubmit={handleWhatsAppRedirect} className="space-y-8">
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold tracking-widest text-muted uppercase">
+                    Nama Lengkap *
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="John Doe"
+                    className="input-warm"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold tracking-widest text-muted uppercase">
+                    Email *
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    placeholder="john@email.com"
+                    className="input-warm"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold tracking-widest text-muted uppercase">
+                    Pesan *
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder="Ceritakan tentang proyek atau pertanyaan Anda..."
+                    className="input-warm resize-none"
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="btn-primary w-full justify-center text-sm"
+                >
+                  {sending ? (
+                    "Mengirim..."
+                  ) : (
+                    <>
+                      Kirim via WhatsApp
+                      <span className="material-symbols-outlined text-base">
+                        send
+                      </span>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
