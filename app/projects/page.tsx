@@ -83,12 +83,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         className="project-card card-warm rounded-3xl overflow-hidden flex flex-col h-full block"
       >
         {/* Image */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative h-56 overflow-hidden bg-gray-100">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-contain transition-transform duration-700 group-hover:scale-105"
           />
           <div className="project-overlay rounded-none" />
 

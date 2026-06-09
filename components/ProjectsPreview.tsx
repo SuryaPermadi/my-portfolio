@@ -96,12 +96,12 @@ export default function ProjectsSection() {
                   className="group project-card block card-warm rounded-3xl overflow-hidden"
                 >
                   {/* Image */}
-                  <div className={`relative overflow-hidden ${aspectRatio}`}>
+                  <div className={`relative overflow-hidden bg-gray-100 ${aspectRatio}`}>
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="project-overlay" />
 
