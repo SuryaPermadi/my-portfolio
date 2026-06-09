@@ -19,7 +19,7 @@ const projects = [
     title: "Photobox / Capture Moment",
     description:
       "Aplikasi photobooth digital dengan frame animasi, efek visual menarik, dan pengalaman capturing yang seamless.",
-    image: "/images/photobox.png",
+    image: "/images/photoboxs.png",
     link: "https://usphoto.vercel.app/",
     category: "Product Design",
     year: "2025",
