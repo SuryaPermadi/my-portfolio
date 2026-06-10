@@ -15,7 +15,7 @@ export default function ContactSection() {
     e.preventDefault();
     setSending(true);
     const { name, email, message } = formData;
-    const phoneNumber = "6289652391060";
+    const phoneNumber = "6281223929469";
     const text = `Halo Surya, saya ${name} (${email}).%0A%0APesan: ${message}`;
     setTimeout(() => {
       window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
