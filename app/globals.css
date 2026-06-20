@@ -167,13 +167,13 @@
   height: 8px;
   border-radius: 50%;
   background: #22C55E;
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
   animation: pulse-green 2s infinite;
 }
 
 @keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2); }
-  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.1); }
+  0%, 100% { box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1); }
 }
 
 /* Separator line */
