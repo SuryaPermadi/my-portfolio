@@ -18,7 +18,7 @@ const featuredProjects = [
     title: "Photobox",
     description:
       "Aplikasi photobooth online dengan frame animasi dan efek visual yang menarik.",
-    image: "/images/photobox.png",
+    image: "/images/photoboxs.png",
     link: "https://photobooth-livid-two.vercel.app/",
     tags: ["Animation", "JS"],
     size: "sm",
@@ -70,15 +70,15 @@ export default function ProjectsSection() {
               project.size === "lg"
                 ? "md:col-span-7"
                 : project.size === "sm"
-                ? "md:col-span-5"
-                : "md:col-span-12";
+                  ? "md:col-span-5"
+                  : "md:col-span-12";
 
             const aspectRatio =
               project.size === "lg"
                 ? "aspect-[4/3]"
                 : project.size === "sm"
-                ? "aspect-[4/3]"
-                : "aspect-[16/6]";
+                  ? "aspect-[4/3]"
+                  : "aspect-[16/6]";
 
             return (
               <motion.div
