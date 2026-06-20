@@ -39,7 +39,7 @@ export default function HeroSection() {
               />
             </div>
             {/* Available badge */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-md border border-black/5 flex items-center gap-2 whitespace-nowrap">
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-surface rounded-full px-4 py-2 shadow-md border border-border flex items-center gap-2 whitespace-nowrap">
               <span className="status-dot" />
               <span className="text-xs font-semibold text-charcoal">
                 Available for Work
@@ -154,7 +154,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-3 gap-6 pt-10 border-t border-black/8"
+            className="grid grid-cols-3 gap-6 pt-10 border-t border-border"
           >
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col gap-1">

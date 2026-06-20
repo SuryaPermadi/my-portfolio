@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import DarkModeToggle from "./DarkModeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -33,7 +34,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-black/5"
+            ? "bg-surface/90 backdrop-blur-md shadow-sm border-b border-border"
             : "bg-transparent"
         }`}
       >
@@ -72,36 +73,42 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA Button */}
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex btn-primary text-sm"
-          >
-            Let&apos;s Talk
-          </Link>
+          {/* Right side: Dark mode toggle + CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <DarkModeToggle />
+            <Link
+              href="/contact"
+              className="btn-primary text-sm"
+            >
+              Let&apos;s Talk
+            </Link>
+          </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px]"
-          >
-            <span
-              className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
-                isOpen ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-            <span
-              className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
-                isOpen ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
-          </button>
+          {/* Mobile: Dark mode toggle + Hamburger */}
+          <div className="flex md:hidden items-center gap-3">
+            <DarkModeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              className="flex flex-col justify-center items-center w-8 h-8 gap-[5px]"
+            >
+              <span
+                className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
+                  isOpen ? "rotate-45 translate-y-[7px]" : ""
+                }`}
+              />
+              <span
+                className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`w-5 h-0.5 bg-charcoal transition-all duration-300 ${
+                  isOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                }`}
+              />
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -113,7 +120,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[65px] z-40 bg-white border-b border-black/5 shadow-lg md:hidden"
+            className="fixed inset-x-0 top-[65px] z-40 bg-surface border-b border-border shadow-lg md:hidden"
           >
             <div className="max-w-7xl mx-auto px-6 py-6">
               <nav className="flex flex-col">

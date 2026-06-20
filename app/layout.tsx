@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Manrope, Lora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,9 +54,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} ${lora.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground h-full selection:bg-accent/20 selection:text-accent`}
       >
-        <Navbar />
-        <main className="relative">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main className="relative">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

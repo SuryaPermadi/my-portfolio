@@ -83,7 +83,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         className="project-card card-warm rounded-3xl overflow-hidden flex flex-col h-full block"
       >
         {/* Image */}
-        <div className="relative h-56 overflow-hidden bg-gray-100">
+        <div className="relative h-56 overflow-hidden bg-cream">
           <Image
             src={project.image}
             alt={project.title}
@@ -97,7 +97,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-white/90 backdrop-blur-sm text-charcoal text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full"
+                className="bg-surface/90 backdrop-blur-sm text-charcoal text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full"
               >
                 {tag}
               </span>
@@ -105,7 +105,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </div>
 
           {/* Arrow */}
-          <div className="absolute top-3 right-3 w-9 h-9 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+          <div className="absolute top-3 right-3 w-9 h-9 bg-surface rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
             <span className="material-symbols-outlined text-charcoal text-base">
               open_in_new
             </span>

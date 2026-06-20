@@ -39,7 +39,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 px-6 md:px-10">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto">
-        <div className="h-px w-full bg-black/8 mb-24" />
+        <div className="h-px w-full bg-border mb-24" />
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <motion.div
@@ -96,7 +96,7 @@ export default function ProjectsSection() {
                   className="group project-card block card-warm rounded-3xl overflow-hidden"
                 >
                   {/* Image */}
-                  <div className={`relative overflow-hidden bg-gray-100 ${aspectRatio}`}>
+                  <div className={`relative overflow-hidden bg-cream ${aspectRatio}`}>
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="bg-white/90 backdrop-blur-sm text-charcoal text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+                          className="bg-surface/90 backdrop-blur-sm text-charcoal text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
                         >
                           {tag}
                         </span>
@@ -118,7 +118,7 @@ export default function ProjectsSection() {
                     </div>
 
                     {/* Arrow icon on hover */}
-                    <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    <div className="absolute top-4 right-4 w-10 h-10 bg-surface rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
                       <span className="material-symbols-outlined text-charcoal text-base">
                         open_in_new
                       </span>

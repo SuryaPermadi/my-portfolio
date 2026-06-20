@@ -26,7 +26,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="h-px w-full bg-black/8 mb-24" />
+        <div className="h-px w-full bg-border mb-24" />
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
           {/* Left: Text */}

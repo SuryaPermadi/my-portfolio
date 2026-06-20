@@ -63,7 +63,7 @@ const experiences = [
 
 export default function ExperienceTimeline() {
   return (
-    <div className="relative border-l-2 border-black/8 ml-4 space-y-16 pb-12">
+    <div className="relative border-l-2 border-border ml-4 space-y-16 pb-12">
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
@@ -74,7 +74,7 @@ export default function ExperienceTimeline() {
           className="relative pl-10"
         >
           {/* Timeline dot */}
-          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm" />
+          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-surface shadow-sm" />
 
           {/* Company Header */}
           <div className="mb-8">

@@ -71,7 +71,7 @@ export default function AboutPage() {
 
         {/* Skills Cards */}
         <div className="mb-24">
-          <div className="h-px bg-black/8 mb-16" />
+          <div className="h-px bg-border mb-16" />
           <p className="section-label mb-4">Skills</p>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-charcoal tracking-tight mb-12">
             Apa yang Saya Kuasai
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
         {/* Experience */}
         <div>
-          <div className="h-px bg-black/8 mb-16" />
+          <div className="h-px bg-border mb-16" />
           <p className="section-label mb-4">Experience</p>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-charcoal tracking-tight mb-16">
             Perjalanan Profesional

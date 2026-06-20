@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-black/8 py-12 mt-12">
+    <footer className="bg-surface border-t border-border py-12 mt-12">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Brand */}
@@ -61,7 +61,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all"
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-all"
               >
                 <span className="material-symbols-outlined text-base">
                   {social.icon}
