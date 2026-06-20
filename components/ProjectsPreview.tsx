@@ -6,11 +6,11 @@ import Image from "next/image";
 
 const featuredProjects = [
   {
-    title: "Redesign LSP Mercu Buana",
+    title: "Inventory Stock",
     description:
-      "Website Lembaga Sertifikasi Profesi Universitas Mercu Buana dengan sistem navigasi yang lebih efisien dan modern.",
-    image: "/images/lsp.png",
-    link: "https://lsp-mercu-buana.vercel.app/",
+      "Website untuk mengelola stok barang.",
+    image: "/images/inventory-stock.png",
+    link: "https://inventory-stock-rho.vercel.app/",
     tags: ["React", "Tailwind"],
     size: "lg",
   },
