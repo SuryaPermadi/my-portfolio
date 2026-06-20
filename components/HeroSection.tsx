@@ -39,9 +39,9 @@ export default function HeroSection() {
               />
             </div>
             {/* Available badge */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-surface rounded-full px-5 py-2 shadow-xl border border-charcoal/20 dark:border-border/50 flex items-center gap-2 whitespace-nowrap z-10">
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-[#1A1A1A] rounded-full px-5 py-2 shadow-xl border border-charcoal/10 dark:border-white/10 flex items-center gap-2 whitespace-nowrap z-10">
               <span className="status-dot" />
-              <span className="text-xs font-bold text-charcoal tracking-wide">
+              <span className="text-xs font-bold text-charcoal dark:text-white tracking-wide">
                 Available for Work
               </span>
             </div>
